@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e107Theme name="RideBlue3" version="1.0.0" date="2021-06-21" compatibility="2.3.1">
+	<author name ="Jimako" email="" url="https://www.e107sk.com" />
+	<summary>RideBlue theme by veskoto with e107 Bootstrap5 </summary>
+	<description>RideBlue theme by veskoto with e107 Bootstrap5</description>
+	<category>generic</category>
+	<plugins>
+		<plugin name='gallery' url='core' />
+		<plugin name='social' url='core' />
+		<plugin name='banner' url='core' />				
+	</plugins>
+	<keywords>
+		<word>bootstrap</word>
+		<word>core</word>
+	</keywords>
+	<screenshots>
+		<image>rideblue2_preview.png</image>
+	</screenshots>
+	<stylesheets>
+		<css file="style.css" name="Default"  />
+	</stylesheets>
+	<libraries>
+		<library name="bootstrap" version="5" /> 
+		<library name="fontawesome" version="5"  />
+	</libraries>
+	<layouts>
+		<layout name='3columns' title='3 colums' default='true'>
+			<custompages>FRONTPAGE</custompages>	
+		</layout>
+		<layout name='full' title='Full width page'  >
+            <custompages>forum</custompages>															            
+		</layout>
+		<layout name='sidebar_right' title='Blog sidebar-right'  >
+			<custompages>user.php content/ calendar_menu/ blogcalendar_menu/</custompages>	
+		</layout>
+	</layouts>
+	<themePrefs>
+		<pref name='branding'>sitename</pref>
+		<pref name='inlinecss'></pref>
+		<pref name='inlinejs'></pref>
+	</themePrefs>
+</e107Theme>
