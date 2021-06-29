@@ -1,40 +1,47 @@
-
-
-
 $(document).ready(function() {
- 
- $( '.topics__control:empty' ).remove();
- 
- 
- $('span.glyphicon.glyphicon-envelope').each(function() {
- $(this).removeClass('glyphicon glyphicon-envelope');
- $(this).addClass('fas fa-envelope');
-} )  
 
-$('span.glyphicon.glyphicon-print').each(function() {
- $(this).removeClass('glyphicon glyphicon-print');
- $(this).addClass('fas fa-print');
-} ) 
- 
-/*		$('i.fa-rss').each(function() {
-			   $(this).addClass('fas');
-		} ); 
+		//should be fixed in core
+    $('i.fa-rss').each(function() {
+      	 $(this).addClass('fas');
+  	} ); 
+  	
+  	//should be fixed in core
+    $('.forum-viewtopic').find('ul.dropdown-menu li').each(function() {
+  	 $(this).addClass('dropdown-item');
+  	} ); 
+    
+    $('.forum-viewtopic').find('ul.dropdown-menu').each(function() {
+  	 $(this).addClass('dropdown-menu-right');
+  	} );     
+    
+    $('#forum-viewforum').find('ul.dropdown-menu').each(function() {
+  	 $(this).addClass('dropdown-menu-right');
+  	} ); 
+    
+    $('.btn-group').find('ul.dropdown-menu li').each(function() {
+  	 $(this).addClass('dropdown-item');
+  	} ); 
+  	
+    // hide #back-top first
+    $("#back-top").hide();
+    
+    // fade in #back-top
+    $(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('#back-top').fadeIn();
+            } else {
+                $('#back-top').fadeOut();
+            }
+        });
 
-		$('.btn-social i.fa-facebook').each(function() {
-			$(this).removeClass('fa-facebook').addClass('fa-facebook-f');
-	 	} );
-
-		const pwd_button = document.getElementById('pwsubmit'); 
-	    if(document.body.contains(pwd_button)){
-			pwd_button.className = 'btn btn-primary btn-xl';
-		}
-		
-      $('.dropdown-pm').find('ul.dropdown-menu').each(function() {
-      	$(this).removeClass('dropdown-menu dropdown-menu-end').addClass('sub-menu');
-      });
-      
-      $('.dropdown-pm').find('a.dropdown-item').each(function() {
-      	$(this).removeClass('dropdown-item');
-      }); 
-*/	 	 
-}); 
+        // scroll body to 0px on click
+        $('#back-top a').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 500);
+            return false;
+        });
+    });
+    
+});

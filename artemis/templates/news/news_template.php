@@ -43,7 +43,7 @@ $NEWS_TEMPLATE['list']['first'] = '
           <div class="text-justify">
        
           </div>
-           <div class="text-right">
+           <div class="text-right text-end">
 			<a href="{NEWS_URL}" class="btn btn-primary">{LAN=LAN_READ_MORE}</a>
 			</div>
         <hr>
@@ -68,7 +68,7 @@ $NEWS_TEMPLATE['list']['item']	= '
                        	{NEWS_SUMMARY}
 					</p>
                     <p>
-                       <a href="{NEWSURL}" class="btn btn-small btn-primary">'.LAN_READ_MORE.'</a>
+                       <a href="{NEWSURL}" class="btn btn-small btn-primary">{LAN=READ_MORE}</a>
                    </p>
  				</div>
 		</div>
@@ -79,40 +79,69 @@ $NEWS_TEMPLATE['list']['item']	= '
 
 
 
- 
+
+
+//$NEWS_MENU_TEMPLATE['list']['separator']   = '<br />';
+
+
+
+// XXX As displayed by news.php (no query) or news.php?list.1.1 (ie. regular view of a particular category)
+//XXX TODO GEt this looking good in the default Bootstrap theme. 
+/*
+$NEWS_TEMPLATE['default']['item'] = '
+	{SETIMAGE: w=400}
+	<div class="view-item">
+		<h2>{NEWSTITLE}</h2>
+		<small class="muted">
+		<span class="date">{NEWSDATE=short} by <span class="author">{NEWSAUTHOR}</span></span>
+		</small>
+
+		<div class="body">
+			{NEWSIMAGE}
+			{NEWSBODY}
+			{EXTENDED}
+		</div>
+		<div class="options">
+			<span class="category">{NEWSCATEGORY}</span> {NEWSTAGS} {NEWSCOMMENTS} {EMAILICON} {PRINTICON} {PDFICON} {ADMINOPTIONS}
+		</div>
+	</div>
+';
+*/
+
+
 
 
 
 $NEWS_WRAPPER['default']['item']['NEWSIMAGE: item=1'] = '<span class="news-images-main pull-left float-left col-xs-12 col-sm-6 col-md-6">{---}</span>';
 
-$NEWS_TEMPLATE['default']['caption'] = null; // add a value to user tablerender()
+$NEWS_TEMPLATE['default']['caption'] = LAN_CATEGORY; // add a value to user tablerender()
 $NEWS_TEMPLATE['default']['start']	= '<!-- Default News Template -->';
 $NEWS_TEMPLATE['default']['item'] = '
- {SETIMAGE: w=200&h=200}
- <table style="width: 100%;" cellpadding="0" cellspacing="0">
-  <tr>
-    <td style="vertical-align: top;">
-      <h3>{NEWSTITLELINK=extend}</h3>
-      <span class="hpnote">' . LAN_THEME_8 . '&nbsp;{NEWSDATE=short}&nbsp;&nbsp;' . LAN_THEME_9 . '&nbsp;{NEWSAUTHOR}&nbsp;&nbsp;' . LAN_THEME_11 . '&nbsp;{NEWSCATEGORY}&nbsp;&nbsp;{NEWSCOMMENTS}</span>
-    </td>
-  </tr>
-  <tr>
-    <td style="vertical-align: top;">
-		<div class="newscont">
-		{NEWSIMAGE}{NEWSBODY}
-		{EXTENDED}
+		{SETIMAGE: w=400&h=400}
+		<div class="default-item">
+		<h2 class="news-title">{NEWS_TITLE: link=1}</h2>
+
+        <hr class="news-heading-sep">
+         	<div class="row">
+        		<div class="col-md-6"><small>{GLYPH=user} &nbsp;{NEWSAUTHOR} &nbsp; {GLYPH=time} &nbsp;{NEWSDATE=short} </small></div>
+        		<div class="col-md-6 text-right text-end options"><small>{GLYPH=tags} &nbsp;{NEWSTAGS} &nbsp; {GLYPH=folder-open} &nbsp;{NEWSCATEGORY} </small></div>
+        	</div>
+        <hr>
+          {NEWSIMAGE: item=1}
+
+          <p class="lead">{NEWS_SUMMARY}</p>
+          {NEWSVIDEO: item=1}
+          <div class="text-justify">
+          {NEWS_BODY}
+          </div>
+          <div class="text-right text-end">
+          {EXTENDED}
+          </div>
+		  <hr>
+			<div class="options">
+			<div class="btn-group hidden-print">{NEWSCOMMENTLINK: glyph=comments&class=btn btn-default btn-secondary}{PRINTICON: class=btn btn-default btn-secondary}{PDFICON}{SOCIALSHARE}{ADMINOPTIONS: class=btn btn-default btn-secondary}</div>
+			</div>
 		</div>
-    </td>
-  </tr>
-  <tr>
-    <td style="vertical-align: top;">
-{EMAILICON}
-{PRINTICON}
-{PDFICON}
-{ADMINOPTIONS}
-    </td>
-  </tr>
-</table>
 ';
 
 $NEWS_TEMPLATE['default']['end']	= '';
@@ -130,7 +159,7 @@ $NEWS_TEMPLATE['2-column']['item']     = '<div class="item col-md-6">
 											{NEWSTHUMBNAIL=placeholder}
 	                                            <h3>{NEWS_TITLE}</h3>
 	                                            <p>{NEWS_SUMMARY}</p>
-	                                         	<p class="text-right"><a class="btn btn-primary btn-othernews" href="{NEWSURL}">' . LAN_READ_MORE . '</a></p>
+	                                         	<p class="text-right text-end"><a class="btn btn-primary btn-othernews" href="{NEWSURL}">' . LAN_READ_MORE . '</a></p>
             							  </div>';
 $NEWS_TEMPLATE['2-column']['end']      = '</div>';
 
@@ -143,6 +172,7 @@ $NEWS_TEMPLATE['related']['start'] = "<hr><h4>".defset('LAN_RELATED', 'Related')
 $NEWS_TEMPLATE['related']['item'] = "<li><a href='{RELATED_URL}'>{RELATED_TITLE}</a></li>";
 $NEWS_TEMPLATE['related']['end'] = "</ul>";*/
 
-$NEWS_TEMPLATE['related']['start'] = '{SETIMAGE: w=350&h=350&crop=1}<h2 class="caption">You Might Also Like</h2><div class="row">';
-$NEWS_TEMPLATE['related']['item'] = '<div class="col-md-4"><a href="{RELATED_URL}">{RELATED_IMAGE}</a><h3><a href="{RELATED_URL}">{RELATED_TITLE}</a></h3></div>';
-$NEWS_TEMPLATE['related']['end'] = '</div>';
+$NEWS_TEMPLATE['related']['caption']    = '{LAN=RELATED}';
+$NEWS_TEMPLATE['related']['start']      = '{SETIMAGE: w=350&h=350&crop=1}<div class="row">';
+$NEWS_TEMPLATE['related']['item']       = '<div class="col-md-4"><a href="{RELATED_URL}">{RELATED_IMAGE}</a><h3><a href="{RELATED_URL}">{RELATED_TITLE}</a></h3></div>';
+$NEWS_TEMPLATE['related']['end']        = '</div>';

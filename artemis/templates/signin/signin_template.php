@@ -6,29 +6,65 @@
 $SIGNIN_TEMPLATE = [];
 
 
-$SIGNIN_WRAPPER['signin']['SIGNIN_LOGIN_HREF'] = '<li  class="nav-item"><a class="nav-link" href="{---}"><i class="fa fa-user"></i>&nbsp;{LAN=LAN_LOGINMENU_51}</a></li>';
+$SIGNIN_WRAPPER['signin']['SIGNIN_SIGNUP_HREF'] = '<li class="'.theme_settings::main_li_class().'"><a class="btn btn-sm  bg-gradient-info  btn-round mb-0 me-1 btn-nowrap" href="{---}">{LAN=LAN_LOGINMENU_3}</a></li>';
 
-$SIGNIN_WRAPPER['signin']['SIGNIN_SIGNUP_HREF'] = '<li  class="nav-item"><a class="nav-link" href="{---}"><i class="fa fa-sign-out"></i>&nbsp;{LAN=LAN_LOGINMENU_3}</a></li>';
+$SIGNIN_TEMPLATE['signin'] = '
+			<ul class="navbar-nav navbar-right  mx-auto  ms-auto">
+				{SIGNIN_SIGNUP_HREF}
+				<li class="divider-vertical"></li>
+				<li class="'.theme_settings::main_li_class().' dropdown">
+				<a class="btn btn-nowrap btn-sm bg-gradient-primary btn-round mb-0 me-1" data-bs-toggle="dropdown" href="#" data-toggle="dropdown">{LAN=LAN_LOGINMENU_51} '.theme_settings::main_caret('-white').'</a>
+					<div class="dropdown-menu col-sm-12" style="min-width:250px; padding: 15px; padding-bottom: 0px;">
+					
+					{SIGNIN_FORM=start}
+					<p>{SIGNIN_INPUT_USERNAME}</p>
+					<p>{SIGNIN_INPUT_PASSWORD}</p>
+	
+					<div class="form-group"></div>
+					{SIGNIN_IMAGECODE_NUMBER}
+					{SIGNIN_IMAGECODE_BOX}
+					
+					<div class="checkbox">		
+					<label class="string optional" for="bs3-autologin"><input style="margin-right: 10px;" type="checkbox" name="autologin" id="bs3-autologin" value="1">
+					{LAN=LAN_LOGINMENU_6}</label>
+					</div>
+					<div class="d-grid gap-2" style="padding-bottom:15px">
+					<input class="btn btn-primary btn-block" type="submit" name="userlogin" id="bs3-userlogin" value="{LAN=LAN_LOGINMENU_51}">			
+					<a href="{SIGNIN_FPW_HREF}" class="btn btn-default btn-secondary btn-sm  btn-block">{LAN=LAN_LOGINMENU_4}</a>
+					<a href="{SIGNIN_RESEND_LINK=href}" class="btn btn-default btn-secondary btn-sm  btn-block">{LAN=LAN_LOGINMENU_40}</a>
+					</div>
+					{SIGNIN_FORM=end}
+					</div>
+				
+				</li>
+	
+			</ul>';
 
-$SIGNIN_TEMPLATE['signin'] = ' {SIGNIN_LOGIN_HREF}{SIGNIN_SIGNUP_HREF} ';
 
 
+$SIGNIN_WRAPPER['signout']['SIGNIN_ADMIN_HREF'] = ' <a class="dropdown-item signin-sc admin" id="signin-sc-admin" href="{---}"><span class="fa fa-cogs"></span> {LAN=LAN_LOGINMENU_11}</a> ';
+$SIGNIN_WRAPPER['signout']['SIGNIN_PM_NAV'] = '<li class="dropdown dropdown-pm">{---}</li>';
 
-$SIGNIN_WRAPPER['signout']['SIGNIN_ADMIN_HREF'] = '<li class="nav-item"><a class="nav-link" href="{---}"><i class="fa fa-cogs"></i>&nbsp;{LAN=LAN_LOGINMENU_11}</a></li>';
-$SIGNIN_WRAPPER['signout']['SIGNIN_USERSETTINGS_HREF'] = '<li class="nav-item"><a class="nav-link" href="{---}"><i class="fa fa-cog"></i>&nbsp; {LAN=LAN_SETTINGS}</a></li>';
-$SIGNIN_WRAPPER['signout']['SIGNIN_PROFILE_HREF'] = '<li class="nav-item"><a class="nav-link" href="{---}"><i class="fa fa-user"></i>&nbsp;  {LAN=LAN_LOGINMENU_13}</a></li>';
-$SIGNIN_WRAPPER['signout']['SIGNIN_LOGOUT_HREF'] = '<li class="nav-item"><a class="nav-link" href="{---}"><i class="fa fa-power-off"></i>&nbsp;{LAN=LAN_LOGOUT}</a></li>';
-$SIGNIN_WRAPPER['signout']['SIGNIN_PM_NAV'] = '<li class="nav-item dropdown">{---}</li>';
 
- 
 $SIGNIN_TEMPLATE['signout'] = '
-<style> .pm-nav {padding: 0rem; }</style>
- 
-	<li class="nav-item"><a class="nav-link" href="#"><span>{LAN=LAN_THEME_SIGNIN_01}{USER_AVATAR: w=20&h=20&crop=1&shape=circle} {SIGNIN_USERNAME: username=1}</span></a></li>
-     {SIGNIN_PM_NAV}
-     {SIGNIN_USERSETTINGS_HREF}
-     {SIGNIN_PROFILE_HREF}
-     {SIGNIN_ADMIN_HREF}
-     {SIGNIN_LOGOUT_HREF}
- ';
 
+		<ul class="navbar-nav navbar-right mx-auto  ms-auto">
+			{SIGNIN_PM_NAV}
+			<li class="'.theme_settings::main_li_class().'">
+			 <a href="#" class="'.theme_settings::main_a_class().'" data-bs-toggle="dropdown" data-toggle="dropdown">{USER_AVATAR: w=30&h=30&crop=1&shape=circle} {SIGNIN_USERNAME}'.theme_settings::main_caret().'</a>
+				<div class=" dropdown-menu dropdown-menu-animation dropdown-md p-3 border-radius-lg mt-0 mt-lg-3">
+			 
+					<a class="dropdown-item border-radius-md" href="{SIGNIN_USERSETTINGS_HREF}"><span class="fa fa-cog"></span> {LAN=LAN_SETTINGS}</a>
+				 
+			 
+					<a class="dropdown-item border-radius-md" role="button" href="{SIGNIN_PROFILE_HREF}"><span class="fa fa-user"></span> {LAN=LAN_LOGINMENU_13}</a>
+			 
+				 
+				{SIGNIN_ADMIN_HREF}
+			 
+				<a class="dropdown-item border-radius-md" href="{SIGNIN_LOGOUT_HREF}"><span class="fa fa-power-off"></span> {LAN=LAN_LOGOUT}</a> 
+				</div>
+			</li>
+		</ul>
+		
+		';
