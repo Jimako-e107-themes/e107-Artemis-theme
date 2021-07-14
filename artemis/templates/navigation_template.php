@@ -130,23 +130,19 @@ $NAVIGATION_TEMPLATE['side']['submenu_end'] 		= '';
 
 
 // Footer links.  - ie. 3 columns of links.
- /* 
-                     <ul class="list-unstyled">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Delivery Information</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms &amp; Conditions</a></li>
-                    </ul>    */ 
-$NAVIGATION_TEMPLATE["footer"]["start"] 				= "<ul class='list-unstyled'>\n";
-$NAVIGATION_TEMPLATE["footer"]["item"] 					= "<li><a href='{LINK_URL}'{LINK_OPEN} title=\"{LINK_DESCRIPTION}\">{LINK_ICON}{LINK_NAME}</a></li>\n";
-$NAVIGATION_TEMPLATE["footer"]["item_submenu"] 			= "<li>{LINK_ICON}{LINK_NAME}{LINK_SUB}</li>\n";
-$NAVIGATION_TEMPLATE["footer"]["item_active"] 			= "<li class='active'{LINK_OPEN}><a href='{LINK_URL}' title=\"{LINK_DESCRIPTION}\">{LINK_ICON}{LINK_NAME}</a></li>\n";
-$NAVIGATION_TEMPLATE["footer"]["end"] 					= "</ul>\n";
-$NAVIGATION_TEMPLATE["footer"]["submenu_start"] 		= "<ul class='list-unstyled'>";
-$NAVIGATION_TEMPLATE["footer"]["submenu_item"]			= "<li><a href='{LINK_URL}'{LINK_OPEN}>{LINK_ICON}{LINK_NAME}</a></li>\n";
-$NAVIGATION_TEMPLATE["footer"]["submenu_loweritem"] 	= "<li><a href='{LINK_URL}'{LINK_OPEN}>{LINK_ICON}{LINK_NAME}</a>{LINK_SUB}</li>\n";
-$NAVIGATION_TEMPLATE["footer"]["submenu_item_active"] 	= "<li class='active'><a href='{LINK_URL}'>{LINK_ICON}{LINK_NAME}</a></li>\n";
-$NAVIGATION_TEMPLATE["footer"]["submenu_end"] 			= "</ul>";
+ /*           <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+            Company
+          </a> */ 
+$NAVIGATION_TEMPLATE["footer"]["start"] 				= "";
+$NAVIGATION_TEMPLATE["footer"]["item"] 					= '<a class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2" href"{LINK_URL}"{LINK_OPEN} title="{LINK_DESCRIPTION}">{LINK_ICON}{LINK_NAME}</a>';
+$NAVIGATION_TEMPLATE["footer"]["item_submenu"] 			= $NAVIGATION_TEMPLATE["footer"]["item"];
+$NAVIGATION_TEMPLATE["footer"]["item_active"] 			= $NAVIGATION_TEMPLATE["footer"]["item"];
+$NAVIGATION_TEMPLATE["footer"]["end"] 					= "";
+$NAVIGATION_TEMPLATE["footer"]["submenu_start"] 		= "";
+$NAVIGATION_TEMPLATE["footer"]["submenu_item"]			= "";
+$NAVIGATION_TEMPLATE["footer"]["submenu_loweritem"] 	= "";
+$NAVIGATION_TEMPLATE["footer"]["submenu_item_active"] 	= "";
+$NAVIGATION_TEMPLATE["footer"]["submenu_end"] 			= "";
 
 
 

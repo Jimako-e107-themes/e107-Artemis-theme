@@ -35,3 +35,9 @@
     border-top: 1px solid rgba(170,170,170,0.35);
     padding: 10px 0;
 }
+
+
+.secimg input#code-verify  {
+    display: inline;
+    width: auto;
+}

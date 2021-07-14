@@ -44,8 +44,8 @@ $SIGNUP_WRAPPER['SIGNUP_IMAGES'] = 				"<div class='form-group row m-2'>
 													{---}
 												</div>";
 
-$SIGNUP_WRAPPER['SIGNUP_IMAGECODE'] = 			"<div class='form-group row m-2'>
-													<label class='control-label' for='code-verify'>" . e107::getSecureImg()->renderLabel()."{SIGNUP_IS_MANDATORY=true}</label>
+$SIGNUP_WRAPPER['SIGNUP_IMAGECODE'] = 			"<div class='form-group m-2 secimg d-flex'>
+													<label class='control-label' for='code-verify'>" . e107::getSecureImg()->renderLabel()."{SIGNUP_IS_MANDATORY=true}</label><br>
 													{---}
 												</div>";
 

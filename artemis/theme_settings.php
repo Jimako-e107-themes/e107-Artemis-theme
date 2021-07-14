@@ -2,28 +2,26 @@
 
 class theme_settings
 {
-    public static $membersonly_start = '';
-    public static $membersonly_end = '';
-
-    public function __construct()
-    {
-        $this->membersonly_start = 'xxx';
-    }
-
+ 
     public static function get_membersonly_template()
     {
-        $tmp['membersonly_start'] = '
-          <section class="page-header section-height-100">
+        $tmp['membersonly_start'] = '{LAYOUT_NAVBAR: key=default} 
+          <section class="page-header section-height-85">
             <div class="container">
               <div class="row">
                 <div class="col-xl-5 col-lg-6 col-md-7 mx-auto">';
 
         $tmp['membersonly_end'] = '
-        </div></div></div></section>
+        </div></div></div></section>{LAYOUT_FOOTER: key=social}
         ';
 
         return $tmp;
     }
+    
+    public static function get_singleforms() {
+	    //$tmp['login_logo'] = '<div class="center">{LOGO: login}</div>';
+        return $tmp;
+	}
 
 	public static function main_li_class() {
 		$main_li_class = "nav-item dropdown dropdown-hover mx-2";

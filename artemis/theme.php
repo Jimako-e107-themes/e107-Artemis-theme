@@ -15,8 +15,7 @@ e107::lan('theme');
     {
         public function init()
         {
-            e107::lan('theme');
-
+ 
             ////// Your own css fixes ////////////////////////////////////////////////////
             define("CORE_CSS", false);
             e107::css('theme', 'e107.css');
@@ -44,15 +43,19 @@ e107::lan('theme');
             e107::meta("viewport", "width=device-width, initial-scale=1, shrink-to-fit=no");
         }
 
-        public function register_css()
+        public function register_css()  //fix me, use sass only for needed stuff
         {
             e107::css('theme', 'assets/css/soft-design-system.css');
+            e107::css('theme', 'assets/css/soft-ui-dashboard.css');
+            
             //e107::css('theme', 'style.css');
         }
             
         public function register_js()
         {
             e107::js('theme', 'assets/js/soft-design-system.js', 'jquery');
+            e107::js('theme', 'assets/js/soft-ui-dashboard.js', 'jquery');
+            
             e107::js('theme', 'assets/js/plugins/countup.min.js', 'jquery');
             e107::js('theme', 'assets/js/plugins/tilt.min.js', 'jquery');
             e107::link('src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"');
@@ -131,7 +134,7 @@ e107::lan('theme');
                 break;
 
                 case "login_page":
-                 $style = 'card-plain';
+                 $style = 'nocaption';
                 break;
 
                 case "forumsearch":
