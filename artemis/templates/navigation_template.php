@@ -5,11 +5,13 @@
 *
 * Navigation Template 
 */
-$main_li_class = theme_settings::main_li_class();
-$main_a_class  = theme_settings::main_a_class();
-$main_sub_a_class = theme_settings::main_sub_a_class(); 
-$main_caret = theme_settings::main_caret('-dark'); 
- 
+
+if(class_exists('theme')) {
+  $main_li_class = theme_settings::main_li_class();
+  $main_a_class  = theme_settings::main_a_class();
+  $main_sub_a_class = theme_settings::main_sub_a_class(); 
+  $main_caret = theme_settings::main_caret('-dark'); 
+} 
 // TEMPLATE FOR {NAVIGATION=main}
 $NAVIGATION_TEMPLATE['main']['start'] = '<ul class="navbar-nav navbar-nav-hover w-80 ">';
 $NAVIGATION_TEMPLATE['main']['end'] = '</ul>';
@@ -144,6 +146,17 @@ $NAVIGATION_TEMPLATE["footer"]["submenu_loweritem"] 	= "";
 $NAVIGATION_TEMPLATE["footer"]["submenu_item_active"] 	= "";
 $NAVIGATION_TEMPLATE["footer"]["submenu_end"] 			= "";
 
+
+$NAVIGATION_TEMPLATE["footer-column"]["start"] 				= "<ul class='list-unstyled'>\n";
+$NAVIGATION_TEMPLATE["footer-column"]["item"] 					= "<li><a href='{LINK_URL}'{LINK_OPEN} title=\"{LINK_DESCRIPTION}\">{LINK_ICON}{LINK_NAME}</a></li>\n";
+$NAVIGATION_TEMPLATE["footer-column"]["item_submenu"] 			= "<li>{LINK_ICON}{LINK_NAME}{LINK_SUB}</li>\n";
+$NAVIGATION_TEMPLATE["footer-column"]["item_active"] 			= "<li class='active'{LINK_OPEN}><a href='{LINK_URL}' title=\"{LINK_DESCRIPTION}\">{LINK_ICON}{LINK_NAME}</a></li>\n";
+$NAVIGATION_TEMPLATE["footer-column"]["end"] 					= "</ul>\n";
+$NAVIGATION_TEMPLATE["footer-column"]["submenu_start"] 		= "<ul class='list-unstyled'>";
+$NAVIGATION_TEMPLATE["footer-column"]["submenu_item"]			= "<li><a href='{LINK_URL}'{LINK_OPEN}>{LINK_ICON}{LINK_NAME}</a></li>\n";
+$NAVIGATION_TEMPLATE["footer-column"]["submenu_loweritem"] 	= "<li><a href='{LINK_URL}'{LINK_OPEN}>{LINK_ICON}{LINK_NAME}</a>{LINK_SUB}</li>\n";
+$NAVIGATION_TEMPLATE["footer-column"]["submenu_item_active"] 	= "<li class='active'><a href='{LINK_URL}'>{LINK_ICON}{LINK_NAME}</a></li>\n";
+$NAVIGATION_TEMPLATE["footer-column"]["submenu_end"] 			= "</ul>";
 
 
 

@@ -82,10 +82,17 @@ class theme_shortcodes extends default_theme_shortcodes
         return $image;
     }
 
-    public function sc_footer()
+	public function sc_footer()
     {
-        if (e_PAGE=="menus.php") {
-            $text = $this->sc_html_fragment("footer", $parm);
+       if (e_PAGE=="menus.php") {
+			$parm['type'] = 'footer'; 
+			$parm['key'] = 'default';
+ 
+		    if(THEME_LAYOUT == 'home') $parm['key'] = 'default';
+			if(THEME_LAYOUT == 'index') $parm['key'] = 'efiction';
+			
+            $text = $this->sc_html_fragment($parm);
+		 
             return $text;
         } else {
             return "";
