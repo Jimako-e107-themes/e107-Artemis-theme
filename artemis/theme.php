@@ -5,7 +5,7 @@ if (!defined('e107_INIT')) {
 }
 
 
-e107::getSingleton('theme_settings', THEME.'theme_settings.php');
+
 
 e107::lan('theme');
 
@@ -13,9 +13,14 @@ e107::lan('theme');
 
     class theme implements e_theme_render
     {
+        public $sitetheme = '';
+        
         public function init()
         {
- 
+
+            $this->sitetheme = e107::getPref('sitetheme');
+            e107::getSingleton('theme_settings', e_THEME.$this->sitetheme.'/theme_settings.php'); 
+
             ////// Your own css fixes ////////////////////////////////////////////////////
             define("CORE_CSS", false);
             e107::css('theme', 'e107.css');
@@ -59,6 +64,9 @@ e107::lan('theme');
             e107::js('theme', 'assets/js/plugins/countup.min.js', 'jquery');
             e107::js('theme', 'assets/js/plugins/tilt.min.js', 'jquery');
             e107::link('src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"');
+            
+            e107::js('theme', 'fix.js', 'jquery');
+            
         }
            
         public function register_fonts()
