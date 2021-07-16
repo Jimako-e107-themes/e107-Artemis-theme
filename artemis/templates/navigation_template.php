@@ -13,7 +13,7 @@ if(class_exists('theme')) {
   $main_caret = theme_settings::main_caret('-dark'); 
 } 
 // TEMPLATE FOR {NAVIGATION=main}
-$NAVIGATION_TEMPLATE['main']['start'] = '<ul class="navbar-nav navbar-nav-hover w-80 ">';
+$NAVIGATION_TEMPLATE['main']['start'] = '<ul class="navbar-nav navbar-nav-hover ms-lg-12 ps-lg-5 w-100">';
 $NAVIGATION_TEMPLATE['main']['end'] = '</ul>';
 
 // Main Link
