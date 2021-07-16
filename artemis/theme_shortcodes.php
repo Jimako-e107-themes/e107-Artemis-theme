@@ -141,13 +141,13 @@ class theme_shortcodes extends default_theme_shortcodes
 				<input type="hidden" name="r" value="0">
 				<input type="hidden" name="t" value="forum">
 				<input type="hidden" name="forum" value="all">
-              <div class="col-md-8 col-7">
+              <div class="col-md-8 col-12">
                 <div class="input-group">
                   <span class="input-group-text"><i class="fa  fa-search" aria-hidden="true"></i></span>
                   <input class="form-control" type="text" name="q"  placeholder="Search" value="" maxlength="50" data-original-title="" title="">
                 </div>
               </div>
-              <div class="col-md-4 col-5 text-start ps-0">
+              <div class="col-md-4 col-12 text-start mt-2">
 			  <button class="btn bg-gradient-info w-100 mb-0 h-10" type="submit" name="s" value="search" data-original-title="" title="">Search forum</button>
               </div>
             </div>
