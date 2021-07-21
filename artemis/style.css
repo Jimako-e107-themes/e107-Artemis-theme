@@ -8,7 +8,7 @@
 
 /* Fix#2 */
 .navbar-logo .sitelogo {
-	max-height: 50px;
+	max-height: 70px;
 }
 
 .navbar-logotext .sitelogo {
@@ -35,45 +35,27 @@
 .min-vh-50 {
     min-height: 50vh!important;
 }
-
-.magic-table {
-	border-collapse: collapse;
-	width: 100%;
-	 
-  }
-  
-  .magic-table tbody tr:nth-child(odd) {
-	  background-color: rgba(100, 150, 250, 0.05); 
-  }
-  
-  .magic-table td,
-  th {
-	  padding: 10px; 
-  }
-  
-  @media screen and (max-width: 500px) {
-	.magic-table {
-	  width: 100%;
-	}
-  
-	.magic-table thead {
-	  display: none;
-	}
-	.magic-table tr {
-	  display: flex;
-	  flex-direction: column;
-	  margin-bottom: 1px;
  
-	  border-radius: 4px;
-	  background-color: #fff;
-	  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	}
-	 
-	.magic-table td {
-	  padding: 0.25rem;
-	  text-align: center;
-	}
-  
-	
-  }
-  
+ 
+/* next page button on forum view template */
+.btn.npbutton {
+    margin-bottom: initial;
+}
+
+.forum-viewforum-pagination a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8392AB;
+    padding: 0;
+    margin: 0 3px;
+    border-radius: 50% !important;
+    width: 36px;
+    height: 36px;
+    font-size: 0.875rem;
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #fff;
+    border-color: #dee2e6;
+    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 9%), 0 2px 3px -1px rgb(0 0 0 / 7%);
+}

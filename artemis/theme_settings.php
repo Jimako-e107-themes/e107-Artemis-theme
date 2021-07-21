@@ -2,7 +2,25 @@
 
 class theme_settings
 {
- 
+    public static function get_jmlayouts() {
+    
+        if (e107::isInstalled('jmlayouts')) {
+            $tmp = e107::getDb()->retrieve('jmlayout', '*', null, true);
+            foreach ($tmp as $layout) {
+                $mode = $layout['layout_mode'] ;
+                $layoutsOptions[$mode] =   $layout;
+            }
+        }
+        else {
+			/* without plugin do it manually... */
+            $layoutsOptions['home']['layout_header'] = 'header_default.html';   
+            $layoutsOptions['home']['layout_footer'] = 'footer_default.html';   
+            $layoutsOptions['index']['layout_header'] = 'header_efiction.html';
+            $layoutsOptions['index']['layout_footer'] = 'footer_default.html';
+        } 
+        return $layoutsOptions;
+    }
+    
     public static function get_membersonly_template()
     {
         $tmp['membersonly_start'] = '{LAYOUT_NAVBAR: key=default} 
@@ -46,5 +64,10 @@ class theme_settings
 	public static function class_submit_button($name ='') {
 		$tmp ='btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0';
 		return $tmp;
+	}
+    
+    public static function get_forum_template() {
+	    $tmp['forum_header_background'] = 'bg-gradient-primary text-white';
+        return $tmp;
 	}	
 }

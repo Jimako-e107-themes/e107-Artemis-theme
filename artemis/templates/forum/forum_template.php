@@ -24,11 +24,53 @@ $FORUM_TRACK_END	= "<br />TRACK-END";
 
 // New in v2.x - requires a bootstrap theme be loaded.  
 
+if(class_exists('theme_settings')) {
+  $theme_settings = theme_settings::get_forum_template(); 
+}
 
 $FORUM_TEMPLATE['main']['start']			=  "";
 
 $FORUM_TEMPLATE['main']['parent_start']			= 	'
 <style>
+.magic-table {
+	border-collapse: collapse;
+	width: 100%;
+	 
+  }
+  
+  .magic-table tbody tr:nth-child(odd) {
+	  background-color: rgba(100, 150, 250, 0.05); 
+  }
+  
+  .magic-table td,
+  th {
+	  padding: 10px; 
+  }
+  
+  @media screen and (max-width: 500px) {
+	.magic-table {
+	  width: 100%;
+	}
+  
+	.magic-table thead {
+	  display: none;
+	}
+	.magic-table tr {
+	  display: flex;
+	  flex-direction: column;
+	  margin-bottom: 1px;
+ 
+	  border-radius: 4px;
+	  background-color: #fff;
+	  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	}
+	 
+	.magic-table td {
+	  padding: 0.25rem;
+	  text-align: center;
+	}	
+  }
+
   @media screen and (max-width: 500px) {
 .magic-table td:nth-child(1) {
 		content: " ";
@@ -45,12 +87,12 @@ $FORUM_TEMPLATE['main']['parent_start']			= 	'
 	.magic-table td::before {
 	  font-weight: bold;
 	}
-	}
+}
 </style>
 <div class="row">
   <div class="col-md-12">
     <div class="card  mb-2" >
-        <div class="card-header bg-gradient-primary text-white">
+        <div class="card-header '.$theme_settings['forum_header_background'].'">
             {PARENTIMAGE:h=50}{PARENTNAME} {PARENTSTATUS}
         </div>
         <div class="card-body p-0">  
