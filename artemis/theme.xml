@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e107Theme name="Artemis" version="1.0.1" date="2021-06-21" compatibility="2.3.1">
+	<author name ="Jimako" email="jimako@e107sk.com" url="https://www.e107sk.com" />
+	<summary>Bootstrap5 generic theme (under development)</summary>
+	<description>For testing only</description>
+	<category>generic</category>
+	<libraries>
+		<library name="bootstrap" version="5" scope="front,wysiwyg"/>
+		<library name="fontawesome" version="5" scope="front,wysiwyg"/>
+	</libraries>
+	<keywords>
+		<word>bootstrap</word>
+		<word>bootstrap5</word>
+	</keywords>
+	<stylesheets>
+        <css file="soft-ui/css/soft-design-system.css" name="Soft UI" scope="wysiwyg"/>
+        <css file="soft-ui/css/nucleo-icons.css" name="Nucleo" scope="wysiwyg"/>
+		<css file="style.css" name="Default" exlude="bootstrap5"/>
+	</stylesheets>
+	<screenshots>
+		<image>artemis_preview.png</image>
+	</screenshots>
+	<layouts>
+		<layout name='home' title='Home Page' >
+			<custompages>FRONTPAGE</custompages>
+		</layout>       
+	    <layout name='full' title='Full Page' >
+			<custompages>forum/ download/</custompages>
+		</layout>
+		<layout name='sidebar_left' title='Sidebar (left)' />
+		<layout name='sidebar_right' title='Sidebar (right)' default='true' />
+		<layout name='splash' title='Splash Page' >
+			<custompages>login fpw signup</custompages>
+		</layout>
+		<layout name='bare' title='Bare Page' >
+			<custompages></custompages>
+		</layout>
+	</layouts>
+	<themePrefs>
+		<pref name='cardmenu_look'>1</pref>
+		<pref name='inlinecss'></pref>
+		<pref name='login_iframe'></pref>
+	</themePrefs>
+	<glyphicons>
+		<glyph name='nucleon' pattern='\.(ni-[a-z-0-9]*)::before\{'  path='soft-ui-design-system/css/nucleo-icons.css' class='ni' prefix='ni-'   tag='i' />
+	</glyphicons>  
+</e107Theme>

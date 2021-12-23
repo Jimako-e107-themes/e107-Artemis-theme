@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<e107Export version="2.3.1" timestamp="1640255972" >
+	<database>
+	<dbTable name="menus">
+		<item>
+			<field name="menu_id">1</field>
+			<field name="menu_name">frontpage_featurebox_menu</field>
+			<field name="menu_location">1</field>
+			<field name="menu_order">1</field>
+			<field name="menu_class">0</field>
+			<field name="menu_pages">1-homepage-2</field>
+			<field name="menu_path">jmmenus/</field>
+			<field name="menu_layout">home</field>
+			<field name="menu_parms">{
+    "lastname_74758209201093747": "",
+    "shortcode_menuCaption": {
+        "English": ""
+    },
+    "shortcode_menuTableStyle": "",
+    "template": "bootstrap5_carousel"
+}</field>
+		</item>
+		<item>
+			<field name="menu_id">2</field>
+			<field name="menu_name">frontpage_hero_menu</field>
+			<field name="menu_location">1</field>
+			<field name="menu_order">2</field>
+			<field name="menu_class">0</field>
+			<field name="menu_pages">1-homepage-3</field>
+			<field name="menu_path">jmmenus/</field>
+			<field name="menu_layout">home</field>
+			<field name="menu_parms">{
+    "lastname_74758209201093747": "",
+    "shortcode_menuCaption": {
+        "English": ""
+    },
+    "shortcode_menuTableStyle": "",
+    "template": "default"
+}</field>
+		</item>
+		<item>
+			<field name="menu_id">3</field>
+			<field name="menu_name">frontpage_wmessage_menu</field>
+			<field name="menu_location">1</field>
+			<field name="menu_order">3</field>
+			<field name="menu_class">0</field>
+			<field name="menu_pages">1-homepage-1|FRONTPAGE</field>
+			<field name="menu_path">jmmenus/</field>
+			<field name="menu_layout">home</field>
+			<field name="menu_parms"></field>
+		</item>
+	</dbTable>
+	</database>
+</e107Export>
