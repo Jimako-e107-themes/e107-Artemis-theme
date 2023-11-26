@@ -5,9 +5,14 @@
 
 ## Warning
 
-Minimal e107 version 2.3.1
+Minimal e107 version 2.3.3
 
 Theme only for testing and learning purposes. 
+
+# This is test version, don't use if you don't know what are you doing
+
+## version 2.0.0
+
 
 ## Documentation
 
@@ -30,4 +35,4 @@ GPL License
 
 ## Credits
 
-Many thanks to BootstrapZero for awesome HTML template. Many thanks to e107 for great Bootstrap CMS.
+ 
