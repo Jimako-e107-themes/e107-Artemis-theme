@@ -1,19 +1,16 @@
-/*!
+// =========================================================
+// Soft UI Design System - v1.0.9
+// =========================================================
 
-=========================================================
-* Soft UI Design System - v1.0.5
-=========================================================
+// Product Page: https://www.creative-tim.com/product/soft-ui-design-system
+// Copyright 2023 Creative Tim (https://www.creative-tim.com)
+// Licensed under MIT (https://github.com/creativetimofficial/soft-ui-dashboard/blob/main/LICENSE)
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-design-system
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+// Coded by www.creative-tim.com
 
-* Coded by Creative Tim
+// =========================================================
 
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 // initialization of Popovers
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
@@ -194,6 +191,32 @@ function copyCode(el) {
 }
 
 // End copy code function
+
+// Input focus function
+var getParent = function(elem, selector) {
+  for (; elem && elem !== document; elem = elem.parentNode) {
+    if (elem.matches(selector)) return elem;
+  }
+  return null;
+};
+document.addEventListener('click', function(event) {
+  var parent = getParent(event.target, '.input-group');
+  if (event.target.classList.contains('form-control')) {
+    var focus = document.querySelectorAll('.input-group.focused');
+    for (var i = 0; i < focus.length; i++) {
+      focus[i].classList.remove('focused');
+    }
+    parent.classList.add('focused');
+  }
+  var focus = document.querySelectorAll('.input-group.focused');
+  if (focus && event.target != parent && event.target.parentNode != parent) {
+    for (var i = 0; i < focus.length; i++) {
+      focus[i].classList.remove('focused');
+    }
+
+  }
+}, false);
+
 
 // Returns a function, that, as long as it continues to be invoked, will not
 // be triggered. The function will be called after it stops being called for
