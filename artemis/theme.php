@@ -61,17 +61,17 @@ if(!defined('e107_INIT'))
 
         public function register_css()  //fix me, use sass only for needed stuff
         {
-            e107::css('theme',  'soft-ui/css/soft-design-system.css');
+            e107::css('theme',  'soft-ui-design-system/css/soft-design-system.css');
         }
   
         public function register_js()
         {
             
             //  e107::css('url', $this->assets_path.'/js/soft-design-system.min.js', 'jquery');
-            e107::js('footer',  THEME.'soft-ui/js/soft-design-system.js', 'jquery');
+            e107::js('footer',  THEME.'soft-ui-design-system/js/soft-design-system.js', 'jquery');
          
-            e107::js('footer',  THEME.'soft-ui//js/plugins/countup.min.js', 'jquery');
-            e107::js('footer',  THEME.'soft-ui//js/plugins/tilt.min.js', 'jquery');
+            e107::js('footer',  THEME.'soft-ui-design-system//js/plugins/countup.min.js', 'jquery');
+            e107::js('footer',  THEME.'soft-ui-design-system//js/plugins/tilt.min.js', 'jquery');
         } 
         
         public function register_fonts()
@@ -81,8 +81,8 @@ if(!defined('e107_INIT'))
  
         public function register_icons()
         {
-             e107::css('theme',  'soft-ui/css/nucleo-icons.css');
-             e107::css('theme',  'soft-ui/css/nucleo-svg.css');
+             e107::css('theme',  'soft-ui-design-system/css/nucleo-icons.css');
+             e107::css('theme',  'soft-ui-design-system/css/nucleo-svg.css');
         }
                
         
@@ -173,7 +173,7 @@ if(!defined('e107_INIT'))
 				case 'wmessage':
                 
 					echo '<header class="header-2">
-						<div class="page-header min-vh-75 relative" style="background-image: url('.THEME.'soft-ui/img/curved-images/curved1.jpg)">
+						<div class="page-header min-vh-75 relative" style="background-image: url('.THEME.'soft-ui-design-system/img/curved-images/curved1.jpg)">
 						<span class="mask bg-gradient-info"></span>
 						<div class="container">
 							<div class="row">

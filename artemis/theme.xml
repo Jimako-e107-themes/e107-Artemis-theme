@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e107Theme name="Artemis" version="1.0.1" date="2021-06-21" compatibility="2.3.1">
+<e107Theme name="Artemis" version="2.0.0" date="2023-11-26" compatibility="2.3.3">
 	<author name ="Jimako" email="jimako@e107sk.com" url="https://www.e107sk.com" />
-	<summary>Bootstrap5 generic theme (under development)</summary>
-	<description>For testing only</description>
+	<summary>Bootstrap5 theme based on Soft UI Design System PRO</summary>
+	<description>Bootstrap5 theme based on Soft UI Design System PRO</description>
 	<category>generic</category>
 	<libraries>
 		<library name="bootstrap" version="5" scope="front,wysiwyg"/>
@@ -10,11 +10,11 @@
 	</libraries>
 	<keywords>
 		<word>bootstrap</word>
-		<word>bootstrap5</word>
+		<word>creativetim</word>
 	</keywords>
 	<stylesheets>
-        <css file="soft-ui/css/soft-design-system.css" name="Soft UI" scope="wysiwyg"/>
-        <css file="soft-ui/css/nucleo-icons.css" name="Nucleo" scope="wysiwyg"/>
+        <css file="soft-ui-design-system/css/soft-design-system.css" name="Soft UI" scope="wysiwyg"/>
+        <css file="soft-ui-design-system/css/nucleo-icons.css" name="Nucleo" scope="wysiwyg"/>
 		<css file="style.css" name="Default" exlude="bootstrap5"/>
 	</stylesheets>
 	<screenshots>
@@ -36,11 +36,6 @@
 			<custompages></custompages>
 		</layout>
 	</layouts>
-	<themePrefs>
-		<pref name='cardmenu_look'>1</pref>
-		<pref name='inlinecss'></pref>
-		<pref name='login_iframe'></pref>
-	</themePrefs>
 	<glyphicons>
 		<glyph name='nucleon' pattern='\.(ni-[a-z-0-9]*)::before\{'  path='soft-ui-design-system/css/nucleo-icons.css' class='ni' prefix='ni-'   tag='i' />
 	</glyphicons>  

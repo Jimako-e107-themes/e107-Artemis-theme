@@ -8,8 +8,8 @@ $SIGNIN_TEMPLATE = [];
 $main_li_class = "nav-item dropdown dropdown-hover mx-2";
 $main_a_class  = "nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center";
 $main_sub_a_class = "dropdown-item border-radius-md";
-$main_caret = '<img src="'.e_THEME_ABS.'artemis/soft-ui/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1">';
-$main_caret_white = '<img src="'.e_THEME_ABS.'artemis/soft-ui/img/down-arrow-white.svg" alt="down-arrow" class="arrow ms-1">';
+$main_caret = '<img src="'.e_THEME_ABS.'artemis/soft-ui-design-system/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1">';
+$main_caret_white = '<img src="'.e_THEME_ABS.'artemis/soft-ui-design-system/img/down-arrow-white.svg" alt="down-arrow" class="arrow ms-1">';
 
 $SIGNIN_WRAPPER['signin']['SIGNIN_SIGNUP_HREF'] = '<li class="'.$main_li_class.'"><a class="btn btn-sm  bg-gradient-info  btn-round mb-0 me-1 btn-nowrap" href="{---}">{LAN=LAN_LOGINMENU_3}</a></li>';
 

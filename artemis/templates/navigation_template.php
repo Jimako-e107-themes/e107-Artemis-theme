@@ -10,7 +10,7 @@
 $main_li_class = "nav-item dropdown dropdown-hover mx-2";
 $main_a_class  = "nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center";
 $main_sub_a_class = "dropdown-item border-radius-md";
-$main_caret = '<img src="'.e_THEME_ABS.'artemis/soft-ui/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1">';
+$main_caret = '<img src="'.e_THEME_ABS.'artemis/soft-ui-design-system/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1">';
  
 // TEMPLATE FOR {NAVIGATION=main}
 $NAVIGATION_TEMPLATE['main']['start'] = '<ul class="navbar-nav navbar-nav-hover w-80 ">';
@@ -81,7 +81,7 @@ $NAVIGATION_TEMPLATE['main']['submenu_item_active'] = '
 $NAVIGATION_TEMPLATE['main']['submenu_loweritem'] = '
 	 
 				<a class="'.$main_sub_a_class.'" href="{LINK_URL}"{LINK_OPEN}>{LINK_ICON}{LINK_NAME}</a>
-				<img src="{THEME_PATH}soft-ui/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1">
+				<img src="{THEME_PATH}soft-ui-design-system/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1">
 				{LINK_SUB}
 		 
 ';
@@ -89,7 +89,7 @@ $NAVIGATION_TEMPLATE['main']['submenu_loweritem'] = '
 $NAVIGATION_TEMPLATE['main']['submenu_loweritem_active'] = '
 		 
 				<a class="'.$main_sub_a_class.' active " href="{LINK_URL}"{LINK_OPEN}>{LINK_ICON}{LINK_NAME}</a>
-				<img src="{THEME_PATH}soft-ui/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1">
+				<img src="{THEME_PATH}soft-ui-design-system/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1">
 				{LINK_SUB}
 	 
 ';
