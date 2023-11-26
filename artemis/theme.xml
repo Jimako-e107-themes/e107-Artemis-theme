@@ -39,4 +39,7 @@
 	<glyphicons>
 		<glyph name='nucleon' pattern='\.(ni-[a-z-0-9]*)::before\{'  path='soft-ui-design-system/css/nucleo-icons.css' class='ni' prefix='ni-'   tag='i' />
 	</glyphicons>  
+	<themePrefs>
+		<pref name='frontimage'>{e_THEME}artemis/images/curved.jpg</pref>
+	</themePrefs>
 </e107Theme>

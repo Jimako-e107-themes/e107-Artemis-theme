@@ -103,6 +103,29 @@ class theme_shortcodes extends e_shortcode
 		return $caption; 
 	}
 
+
+	/* {THEME_PREF: name=xy&default=abc&path=1} */
+	public function sc_theme_pref($parm = [])
+	{
+		$themePrefs = e107::pref('theme');
+
+		$name = $parm['name'];
+		if (!isset($name))
+		{
+			return '';
+		}
+		
+		$default = varset($parm['default'], '');
+		$value = $themePrefs[$name];
+		$value = varset($value, $default);
+
+		if ($parm['path'])  {
+			$value = e107::getParser()->replaceConstants($value, "full");
+		}
+		return $value;
+	}
+ 
+ 
 	/**
 	 * Optional {---BREADCRUMB---} processing.
 	 * @shortcode {---BREADCRUMB---}
