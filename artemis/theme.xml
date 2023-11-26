@@ -5,7 +5,8 @@
 	<description>Bootstrap5 theme based on Soft UI Design System PRO</description>
 	<category>generic</category>
 	<libraries>
-		<library name="bootstrap" version="5" scope="front,wysiwyg"/>
+		<library name="bootstrap" version="5" scope="wysiwyg" files="css" />
+		<library name="bootstrap" version="5" scope="front" files="js"/>
 		<library name="fontawesome" version="5" scope="front,wysiwyg"/>
 	</libraries>
 	<keywords>
