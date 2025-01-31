@@ -57,7 +57,7 @@ class theme_shortcodes extends e_shortcode
 			$class .= ' navbar-text';
 			break;
 		}
-		$text = '<a class="'.$class.'" href="{SITEURL}">'. $brand .'</a>';
+		$text = '<a class="'.$class.'" href="'.SITEURL.'">'. $brand .'</a>';
 
 
 		$text = e107::getParser()->parseTemplate($text);

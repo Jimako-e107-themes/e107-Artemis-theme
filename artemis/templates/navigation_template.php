@@ -20,7 +20,7 @@ $NAVIGATION_TEMPLATE['main']['end'] = '</ul>';
 $NAVIGATION_TEMPLATE['main']['item'] = '
 	<li class="'.$main_li_class.'">
 		<a class="'.$main_a_class.'" role="button" href="{LINK_URL}"{LINK_OPEN} title="{LINK_DESCRIPTION}">
-		 {LINK_ICON}{LINK_NAME} 
+		 {LINK_ICON}&nbsp;{LINK_NAME} 
 		</a> 
 	</li>
 ';
@@ -28,8 +28,8 @@ $NAVIGATION_TEMPLATE['main']['item'] = '
 // Main Link - active state
 $NAVIGATION_TEMPLATE['main']['item_active'] = '
 	<li class="'.$main_li_class.' active">
-		<a class="'.$main_a_class.' active" role="button"  data-target="#" href="{LINK_URL}"{LINK_OPEN} title="{LINK_DESCRIPTION}">
-		 {LINK_ICON} {LINK_NAME}
+		<a class="'.$main_a_class. ' active" role="button"  data-target="#" href="{LINK_URL}"{LINK_OPEN} title="{LINK_DESCRIPTION}">
+		 {LINK_ICON}&nbsp;{LINK_NAME}
 		</a>
 	</li>
 ';

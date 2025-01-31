@@ -199,21 +199,27 @@ var getParent = function(elem, selector) {
   }
   return null;
 };
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
   var parent = getParent(event.target, '.input-group');
-  if (event.target.classList.contains('form-control')) {
+
+  // Ensure parent is not null before continuing
+  if (parent && event.target.classList.contains('form-control')) {
+    // Remove 'focused' class from other input groups
     var focus = document.querySelectorAll('.input-group.focused');
     for (var i = 0; i < focus.length; i++) {
       focus[i].classList.remove('focused');
     }
+
+    // Add 'focused' class to the parent element
     parent.classList.add('focused');
   }
+
+  // Handle unfocusing when clicking outside of the parent
   var focus = document.querySelectorAll('.input-group.focused');
   if (focus && event.target != parent && event.target.parentNode != parent) {
     for (var i = 0; i < focus.length; i++) {
       focus[i].classList.remove('focused');
     }
-
   }
 }, false);
 

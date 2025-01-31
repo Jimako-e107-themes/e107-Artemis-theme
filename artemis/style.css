@@ -32,3 +32,11 @@
 .btn-nowrap {
     white-space: nowrap;
 }
+
+/* fix #5 centered logo */
+#login-template .logo {
+ 
+	display: block;
+}
+
+

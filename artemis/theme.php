@@ -21,8 +21,8 @@ class theme implements e_theme_render
 		e107::css('theme', 'e107.css');
 
 		define("FONTAWESOME", 5);
-		e107::getParser()->setFontAwesome(5); 
-		
+		e107::getParser()->setFontAwesome(5);
+
 		////// Theme meta tags /////////////////////////////////////////////////////////
 		$this->set_metas();
 
@@ -41,7 +41,7 @@ class theme implements e_theme_render
 		$this->getInlineCodes();
 
 		//e107::meta('apple-mobile-web-app-capable','yes');
- 
+
 		$login_iframe  = e107::pref('theme', 'login_iframe', false);
 
 		if (THEME_LAYOUT === "splash" && $login_iframe)
@@ -58,6 +58,8 @@ class theme implements e_theme_render
 
 	public function register_css()  //fix me, use sass only for needed stuff
 	{
+
+
 		e107::css('theme',  'soft-ui-design-system/css/soft-design-system.css');
 	}
 
@@ -171,9 +173,9 @@ class theme implements e_theme_render
 			case 'wmessage':
 				if (!empty($caption))
 				{
-					echo '<h1 class="text-white pt-3 mt-n5" >' . $caption . '</h1>';
+					echo '<h1 class="pt-5" >' . $caption . '</h1>';
 				}
-				echo '<p class="lead text-white mt-3">' . $text . '</p>';
+				echo '<p class="lead mt-3">' . $text . '</p>';
 				break;
 
 			case 'actionbox':
